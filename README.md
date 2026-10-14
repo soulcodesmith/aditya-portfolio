@@ -2,6 +2,10 @@
 
 A minimalist, high-craft, single-page personal portfolio website designed for **Aditya**, 1st-Year B.Tech Student at **JECRC University**, submitted as part of the **Digital Literacy** college course and serving as a professional engineering hub.
 
+🌐 **Live Website:** [https://aditya-jecrc.vercel.app](https://aditya-jecrc.vercel.app)  
+📦 **GitHub Repository:** [https://github.com/soulcodesmith/aditya-portfolio](https://github.com/soulcodesmith/aditya-portfolio)  
+
+
 Inspired by the design aesthetics of **Linear**, **Apple**, and **Vercel** — dark mode by default, hairline borders, subtle glassmorphism, responsive bento grids, and typography-first layouts.
 
 ---
