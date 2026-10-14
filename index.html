@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya — 1st Year B.Tech Student | JECRC University</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Personal portfolio and Digital Literacy coursework submission of Aditya, 1st Year B.Tech student at JECRC University. Crafting software from first principles." />
+  <meta name="author" content="Aditya" />
+  <meta property="og:title" content="Aditya — Engineering & Digital Literacy Portfolio" />
+  <meta property="og:description" content="1st Year B.Tech Student at JECRC University exploring foundational computing, systems, and digital literacy." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Inter & JetBrains Mono / Geist feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f4f4f5',
+              100: '#e4e4e7',
+              200: '#d4d4d8',
+              300: '#a1a1aa',
+              400: '#71717a',
+              500: '#52525b',
+              600: '#3f3f46',
+              700: '#27272a',
+              800: '#18181b',
+              900: '#0f0f12',
+              950: '#08080a',
+            }
+          },
+          boxShadow: {
+            'glow': '0 0 50px -12px rgba(255, 255, 255, 0.08)',
+            'subtle-card': '0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.07)',
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Hairline Borders & Ambient Glow */
+    ::selection {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+    
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #08080a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3f3f46;
+    }
+
+    /* Ambient spotlight effect */
+    .hero-glow {
+      background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 40%, transparent 70%);
+    }
+
+    /* Glass card hover refinement */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.035);
+      box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Subtle grid pattern background */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-950 text-zinc-300 font-sans antialiased selection:bg-white/20 selection:text-white min-h-screen relative flex flex-col justify-between">
+
+  <!-- Background Decorative Grid & Light Cone -->
+  <div class="fixed inset-0 bg-grid-pattern opacity-25 pointer-events-none z-0"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] hero-glow pointer-events-none z-0"></div>
+
+  <!-- ========================================== -->
+  <!-- 1. FLOATING NAVIGATION BAR (Sticky / Glass) -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 sm:pt-6">
+    <nav class="w-full max-w-5xl rounded-full border border-white/10 bg-brand-900/70 backdrop-blur-xl px-4 py-2.5 sm:px-6 sm:py-3 flex items-center justify-between shadow-2xl shadow-black/60 transition-all duration-300">
+      
+      <!-- Brand / Monogram -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 rounded-full">
+        <div class="w-8 h-8 rounded-full bg-white/10 border border-white/15 flex items-center justify-center font-bold text-white text-sm group-hover:bg-white group-hover:text-black transition-colors duration-300">
+          A
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs sm:text-sm font-semibold tracking-tight text-white group-hover:text-zinc-200 transition-colors">ADITYA</span>
+          <span class="text-[10px] font-mono text-zinc-400 hidden sm:inline-block">JECRC UNI &bull; '29</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-1 sm:gap-2">
+        <a href="#about" class="nav-link text-xs font-medium text-zinc-400 hover:text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white/[0.04]">About</a>
+        <a href="#skills" class="nav-link text-xs font-medium text-zinc-400 hover:text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white/[0.04]">Skills</a>
+        <a href="#projects" class="nav-link text-xs font-medium text-zinc-400 hover:text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white/[0.04]">Projects</a>
+        <a href="#coursework" class="nav-link text-xs font-medium text-zinc-400 hover:text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white/[0.04]">Coursework</a>
+        <a href="#contact" class="nav-link text-xs font-medium text-zinc-400 hover:text-white px-3 py-1.5 rounded-full transition-colors hover:bg-white/[0.04]">Contact</a>
+      </div>
+
+      <!-- Action Button / Resume -->
+      <div class="flex items-center gap-2">
+        <button onclick="handleDownloadCV()" class="group inline-flex items-center gap-1.5 text-xs font-medium text-zinc-200 bg-white/[0.06] hover:bg-white hover:text-black border border-white/10 hover:border-white px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-200 shadow-sm">
+          <span>Resume</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-zinc-400 group-hover:text-black transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400 hover:text-white focus:outline-none rounded-lg" aria-label="Toggle navigation menu">
+          <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-x-4 top-20 z-40 bg-brand-900/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 shadow-2xl flex-col gap-3 md:hidden">
+    <a href="#about" class="mobile-nav-link text-sm text-zinc-300 hover:text-white py-2 border-b border-white/5 flex items-center justify-between">
+      <span>About</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
+    </a>
+    <a href="#skills" class="mobile-nav-link text-sm text-zinc-300 hover:text-white py-2 border-b border-white/5 flex items-center justify-between">
+      <span>Skills & Digital Literacy</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
+    </a>
+    <a href="#projects" class="mobile-nav-link text-sm text-zinc-300 hover:text-white py-2 border-b border-white/5 flex items-center justify-between">
+      <span>Projects</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
+    </a>
+    <a href="#coursework" class="mobile-nav-link text-sm text-zinc-300 hover:text-white py-2 border-b border-white/5 flex items-center justify-between">
+      <span>Academic Coursework</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
+    </a>
+    <a href="#contact" class="mobile-nav-link text-sm text-zinc-300 hover:text-white py-2 flex items-center justify-between">
+      <span>Contact</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
+    </a>
+    <div class="pt-2">
+      <button onclick="handleDownloadCV()" class="w-full justify-center inline-flex items-center gap-2 text-xs font-medium text-black bg-white hover:bg-zinc-200 py-2.5 rounded-xl transition">
+        <span>Download Academic CV</span>
+        <i data-lucide="download" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTENT CONTAINER -->
+  <!-- ========================================== -->
+  <main class="relative z-10 flex-grow max-w-5xl mx-auto px-5 sm:px-8 w-full pt-28 sm:pt-36 pb-20 space-y-28 sm:space-y-36">
+
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION -->
+    <!-- ========================================== -->
+    <section id="hero" class="relative pt-6 sm:pt-10 flex flex-col items-start justify-center">
+      
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/[0.07] backdrop-blur-md mb-8">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="text-xs font-mono font-medium text-emerald-300 tracking-tight">
+          1st Year B.Tech Student &bull; JECRC University &bull; Open to Collaborations
+        </span>
+      </div>
+
+      <!-- Bold, Minimal Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] max-w-4xl mb-6">
+        Crafting software from <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500">first principles</span> &amp; exploring modern computing.
+      </h1>
+
+      <!-- 2-sentence Bio -->
+      <p class="text-base sm:text-lg lg:text-xl text-zinc-400 font-normal leading-relaxed max-w-2xl mb-9">
+        Undergraduate engineering student at <span class="text-zinc-200 font-medium">JECRC University</span> exploring algorithms, systems programming, and computing foundations. Bridging the gap between raw hardware logic and digital literacy in modern technology.
+      </p>
+
+      <!-- CTAs & Actions -->
+      <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 w-full sm:w-auto">
+        <a href="#projects" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-black bg-white hover:bg-zinc-200 transition-all duration-200 shadow-lg shadow-white/5 hover:scale-[1.02] active:scale-[0.98]">
+          <span>Explore Projects</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+        
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-medium text-zinc-300 bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 hover:border-white/20 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+          <span>Get in Touch</span>
+          <i data-lucide="mail" class="w-4 h-4 text-zinc-400"></i>
+        </a>
+
+        <!-- Quick Copy Email Button -->
+        <button onclick="copyEmailToClipboard(this)" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full text-xs font-mono text-zinc-400 hover:text-zinc-200 bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-white/10 transition-all" title="Click to copy email">
+          <i data-lucide="copy" class="w-3.5 h-3.5 text-zinc-400"></i>
+          <span>adityajecrc@gmail.com</span>
+        </button>
+      </div>
+
+      <!-- Quick Social Links Bar -->
+      <div class="flex items-center gap-4 text-zinc-500 text-xs pt-4 border-t border-white/5 w-full">
+        <span class="font-mono text-[11px] text-zinc-400 uppercase tracking-wider">Connect:</span>
+        <div class="flex items-center gap-3">
+          <!-- GITHUB: Replace href with your actual GitHub username -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors" aria-label="GitHub Profile">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <!-- LINKEDIN: Replace href with your actual LinkedIn profile -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors" aria-label="LinkedIn Profile">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <!-- X (Twitter): Replace href with your handle -->
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors" aria-label="X / Twitter Profile">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <!-- Direct Email Mailto -->
+          <a href="mailto:adityajecrc@gmail.com" class="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors" aria-label="Send Email">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div class="hidden sm:block ml-auto font-mono text-[11px] text-zinc-400">
+          Digital Literacy &bull; Course Portfolio
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION: ABOUT (Context & Mission) -->
+    <!-- ========================================== -->
+    <section id="about" class="scroll-mt-28">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="font-mono text-xs font-semibold tracking-widest text-zinc-400 uppercase">[01 // ABOUT ME]</span>
+        <div class="h-px bg-white/10 flex-grow max-w-[120px]"></div>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-6">
+        Curiosity, rigorous engineering &amp; digital mindfulness.
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 glass-card rounded-2xl p-6 sm:p-8 space-y-4 text-sm sm:text-base text-zinc-300 leading-relaxed">
+          <p>
+            Hello! I'm <strong class="text-white font-medium">Aditya</strong>, currently in my first year of Bachelor of Technology (B.Tech) in Computer Science &amp; Engineering at <strong class="text-white font-medium">JECRC University</strong>.
+          </p>
+          <p>
+            This portfolio serves dual purposes: it is an official coursework artifact demonstrating competencies in our <strong class="text-white font-medium">Digital Literacy</strong> curriculum, and an open digital hub showcasing my technical experiments, problem-solving journey, and academic milestones.
+          </p>
+          <p class="text-zinc-400 text-sm">
+            I believe true digital fluency isn't just about using ready-made tools—it’s about understanding computational abstraction: how memory is partitioned in C, how network packets route through the Internet, and how software tools can be leveraged ethically to solve real human problems.
+          </p>
+        </div>
+
+        <!-- Quick Bio Stat Card -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div>
+            <div class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider mb-2">Institutional Details</div>
+            <div class="text-lg font-semibold text-white">JECRC University</div>
+            <div class="text-xs text-zinc-400 mt-0.5">Faculty of Engineering &amp; Technology</div>
+          </div>
+
+          <div class="space-y-3 pt-4 border-t border-white/5 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="text-zinc-400">Degree:</span>
+              <span class="text-zinc-200">B.Tech (CSE)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-zinc-400">Class:</span>
+              <span class="text-zinc-200">1st Year &bull; 2025–29</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-zinc-400">Course:</span>
+              <span class="text-emerald-400 font-medium">Digital Literacy</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-zinc-400">Status:</span>
+              <span class="text-zinc-200">Enrolled &amp; Building</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. DIGITAL LITERACY & CORE SKILLS (Bento Grid) -->
+    <!-- ========================================== -->
+    <section id="skills" class="scroll-mt-28">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="font-mono text-xs font-semibold tracking-widest text-zinc-400 uppercase">[02 // COMPETENCIES]</span>
+        <div class="h-px bg-white/10 flex-grow max-w-[120px]"></div>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            Digital Literacy &amp; Core Technical Stack
+          </h2>
+          <p class="text-sm text-zinc-400 mt-1">Structured across systems programming, modern digital hygiene, and foundational computer science.</p>
+        </div>
+        <div class="font-mono text-xs text-zinc-400">
+          Continuous Progression &bull; Semester I
+        </div>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+        <!-- Bento Card 1: Programming & Scripting (Span 7) -->
+        <div class="md:col-span-7 glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-white/[0.05] border border-white/10 text-white">
+                  <i data-lucide="code-2" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold text-white">Programming &amp; Scripting</h3>
+                  <p class="text-xs text-zinc-400">Low-level logic, procedural code &amp; modern scripting</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/5 text-zinc-400 border border-white/5">Core</span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+              Building algorithmic intuition and procedural logic through foundational languages, emphasizing memory layout, variable pointers, and object structures.
+            </p>
+
+            <!-- Skill Pills -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/[0.04] text-zinc-200 border border-white/10">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Python 3
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/[0.04] text-zinc-200 border border-white/10">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> C / C++ (Pointers, Structs)
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/[0.04] text-zinc-200 border border-white/10">
+                <span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span> HTML5 Semantic
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/[0.04] text-zinc-200 border border-white/10">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Modern CSS3 / Tailwind
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/[0.04] text-zinc-200 border border-white/10">
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span> Basic JavaScript (ES6+)
+              </span>
+            </div>
+          </div>
+
+          <!-- Code Snippet Aesthetic Preview -->
+          <div class="bg-black/50 border border-white/5 rounded-xl p-3 font-mono text-[11px] text-zinc-400 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400">&gt;</span>
+              <span>gcc -Wall -O2 main.c &amp;&amp; ./a.out</span>
+            </div>
+            <span class="text-[10px] text-zinc-400">POSIX C99</span>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: Foundational Competencies (Span 5) -->
+        <div class="md:col-span-5 glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5">
+                <div class="p-2 rounded-xl bg-white/[0.05] border border-white/10 text-white">
+                  <i data-lucide="cpu" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-semibold text-white">Computing Foundations</h3>
+                  <p class="text-xs text-zinc-400">Hardware abstraction &amp; architecture</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+              Theoretical understanding of how computing systems operate at their physical and logical baseline.
+            </p>
+
+            <!-- Skill Badges -->
+            <ul class="space-y-2.5 text-xs text-zinc-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zinc-500 mt-0.5 shrink-0"></i>
+                <span><strong class="text-white font-medium">Data Representation:</strong> Binary, Hex, 2's Complement, IEEE-754 Floats</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zinc-500 mt-0.5 shrink-0"></i>
+                <span><strong class="text-white font-medium">Internet Architecture:</strong> OSI Model, TCP/IP Stack, DNS &amp; HTTP/S</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zinc-500 mt-0.5 shrink-0"></i>
+                <span><strong class="text-white font-medium">Problem Solving:</strong> Algorithmic complexity, Big-O, recursion</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-zinc-500 mt-0.5 shrink-0"></i>
+                <span><strong class="text-white font-medium">Digital Ethics:</strong> Privacy rights, open-source licensing &amp; cybersecurity hygiene</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+            <span>Coursework: CS101</span>
+            <span class="text-emerald-400">Active Mastery</span>
+          </div>
+        </div>
+
+        <!-- Bento Card 3: Digital Literacy & Productivity Workflow (Span 12) -->
+        <div class="md:col-span-12 glass-card rounded-2xl p-6 sm:p-7">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+            <div class="flex items-center gap-2.5">
+              <div class="p-2 rounded-xl bg-white/[0.05] border border-white/10 text-white">
+                <i data-lucide="workflow" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-white">Digital Literacy, Tooling &amp; Productivity</h3>
+                <p class="text-xs text-zinc-400">Daily workflows, version control, technical writing &amp; cloud collaboration</p>
+              </div>
+            </div>
+            <span class="text-xs font-mono text-zinc-400">B.Tech Curriculum Core Objective</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            
+            <div class="bg-black/40 border border-white/5 rounded-xl p-3.5 hover:border-white/15 transition-colors">
+              <div class="flex items-center gap-2 mb-1.5 text-white">
+                <i data-lucide="git-branch" class="w-4 h-4 text-emerald-400"></i>
+                <span class="text-xs font-medium">Git &amp; GitHub</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 leading-tight">Branching, merge conflict resolution, pull requests, semantic commits.</p>
+            </div>
+
+            <div class="bg-black/40 border border-white/5 rounded-xl p-3.5 hover:border-white/15 transition-colors">
+              <div class="flex items-center gap-2 mb-1.5 text-white">
+                <i data-lucide="terminal" class="w-4 h-4 text-cyan-400"></i>
+                <span class="text-xs font-medium">Linux CLI</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 leading-tight">Bash shell navigation, pipes, grep, SSH keys, file permissions.</p>
+            </div>
+
+            <div class="bg-black/40 border border-white/5 rounded-xl p-3.5 hover:border-white/15 transition-colors">
+              <div class="flex items-center gap-2 mb-1.5 text-white">
+                <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+                <span class="text-xs font-medium">LaTeX &amp; Docs</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 leading-tight">Technical math typesetting, Overleaf, structured engineering reports.</p>
+            </div>
+
+            <div class="bg-black/40 border border-white/5 rounded-xl p-3.5 hover:border-white/15 transition-colors">
+              <div class="flex items-center gap-2 mb-1.5 text-white">
+                <i data-lucide="book-open" class="w-4 h-4 text-amber-400"></i>
+                <span class="text-xs font-medium">Markdown / PKM</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 leading-tight">Obsidian knowledge graphs, documentation indexing, Zettelkasten.</p>
+            </div>
+
+            <div class="bg-black/40 border border-white/5 rounded-xl p-3.5 hover:border-white/15 transition-colors">
+              <div class="flex items-center gap-2 mb-1.5 text-white">
+                <i data-lucide="cloud" class="w-4 h-4 text-blue-400"></i>
+                <span class="text-xs font-medium">Cloud Suites</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 leading-tight">Google Workspace, Sheets data formulas, real-time peer collaboration.</p>
+            </div>
+
+            <div class="bg-black/40 border border-white/5 rounded-xl p-3.5 hover:border-white/15 transition-colors">
+              <div class="flex items-center gap-2 mb-1.5 text-white">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                <span class="text-xs font-medium">Digital Hygiene</span>
+              </div>
+              <p class="text-[11px] text-zinc-400 leading-tight">2FA/MFA security, password management, phishing mitigation.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. FEATURED PROJECTS & COURSEWORK -->
+    <!-- ========================================== -->
+    <section id="projects" class="scroll-mt-28">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="font-mono text-xs font-semibold tracking-widest text-zinc-400 uppercase">[03 // REPOSITORIES]</span>
+        <div class="h-px bg-white/10 flex-grow max-w-[120px]"></div>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            Featured Projects &amp; Explorations
+          </h2>
+          <p class="text-sm text-zinc-400 mt-1">First-principles implementations, utility tools, and course submissions.</p>
+        </div>
+        <div class="font-mono text-xs text-zinc-400">
+          Source Available &bull; Peer-Reviewed
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- PROJECT 1: First-principles Python Autograd / Math Engine -->
+        <article class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+          <div>
+            <!-- Header bar with icon and project type -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-zinc-200 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                <i data-lucide="variable" class="w-4 h-4"></i>
+              </div>
+              <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                First Principles
+              </span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white group-hover:text-zinc-100 mb-2 transition-colors">
+              MicroGrad-Py: Autograd Engine
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+              A tiny scalar-valued automatic differentiation engine and computation graph evaluator written from scratch in pure Python without external dependencies.
+            </p>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">Python 3</span>
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">Calculus</span>
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">DAG Graphs</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="pt-4 border-t border-white/5 flex items-center gap-2">
+            <!-- REPO LINK: Replace with your actual project link -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>Source</span>
+            </a>
+            <!-- PREVIEW: Modal or interactive demo trigger -->
+            <button onclick="showProjectDetails('MicroGrad-Py', 'A first-principles computation engine implementing forward evaluation and backward automatic differentiation via dynamic Directed Acyclic Graphs (DAG). Built as an independent study in computational calculus during Semester 1 at JECRC University.')" class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>Details</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: Digital Literacy Interactive Portal -->
+        <article class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-zinc-200 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+              </div>
+              <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                Coursework
+              </span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white group-hover:text-zinc-100 mb-2 transition-colors">
+              Digital Literacy Academic Web Portal
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+              Interactive peer guide and educational website synthesizing digital hygiene, open source protocols, and ethical internet architecture for undergraduate engineering students.
+            </p>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">HTML5 Semantic</span>
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">Tailwind CSS</span>
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">Accessibility</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="pt-4 border-t border-white/5 flex items-center gap-2">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>Source</span>
+            </a>
+            <a href="#hero" class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>Live Site</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: C/POSIX CLI Utility -->
+        <article class="glass-card rounded-2xl p-6 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-9 h-9 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-zinc-200 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                <i data-lucide="terminal" class="w-4 h-4"></i>
+              </div>
+              <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                Systems &amp; CLI
+              </span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white group-hover:text-zinc-100 mb-2 transition-colors">
+              SysPulse: Terminal Process Monitor
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+              A lightweight UNIX terminal utility written in C to inspect system memory buffers, process hierarchy trees, and CPU core frequencies with minimal runtime footprint.
+            </p>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">C Language</span>
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">POSIX API</span>
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/[0.04] text-zinc-300 border border-white/5">Memory Mgmt</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="pt-4 border-t border-white/5 flex items-center gap-2">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>Source</span>
+            </a>
+            <button onclick="showProjectDetails('SysPulse CLI', 'Written in C (C99 standard), SysPulse reads directly from /proc filesystem on Linux distributions to parse virtual memory allocations, CPU user/system times, and running process states with sub-millisecond polling cycles.')" class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-colors">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>Details</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. ACADEMIC JOURNEY & MILESTONES (Timeline) -->
+    <!-- ========================================== -->
+    <section id="coursework" class="scroll-mt-28">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="font-mono text-xs font-semibold tracking-widest text-zinc-400 uppercase">[04 // ACADEMICS]</span>
+        <div class="h-px bg-white/10 flex-grow max-w-[120px]"></div>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            Academic Journey &amp; Coursework Milestones
+          </h2>
+          <p class="text-sm text-zinc-400 mt-1">1st Year Engineering Curriculum &bull; JECRC University, Jaipur</p>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-300">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-zinc-400"></i>
+          <span>Semester I &amp; II (2025–26)</span>
+        </div>
+      </div>
+
+      <!-- Vertical Timeline -->
+      <div class="relative border-l border-white/10 ml-4 sm:ml-6 pl-6 sm:pl-8 space-y-10">
+
+        <!-- Timeline Item 1: Digital Literacy -->
+        <div class="relative group">
+          <!-- Timeline Node Point -->
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-4 border-brand-950 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                <span>Digital Literacy &amp; Information Systems</span>
+                <span class="text-xs font-normal text-emerald-400 font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">Current Course</span>
+              </h3>
+              <span class="text-xs font-mono text-zinc-400">JECRC Uni &bull; Module Leader</span>
+            </div>
+            
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+              Mastering the fundamentals of computational empowerment: information synthesis, version-controlled collaboration with Git/GitHub, cloud-based productivity suites, digital privacy, and publishing web standards.
+            </p>
+            
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-zinc-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Collaborative Cloud Tools</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Version Control Workflows</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Information Privacy &amp; Ethics</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Portfolio Production</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2: Computer Programming (C & Python) -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-zinc-400 border-4 border-brand-950 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 class="text-base sm:text-lg font-bold text-white">
+                Computer Programming &amp; Problem Solving (C / Python)
+              </h3>
+              <span class="text-xs font-mono text-zinc-400">Core Engineering Lab</span>
+            </div>
+            
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+              Rigorous practice in procedural programming paradigms, structured problem decomposition, dynamic memory allocation (`malloc`, `free`), pointer arithmetic, and algorithmic edge cases.
+            </p>
+
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-zinc-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Pointers &amp; Memory</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">File I/O Streams</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Data Structuring</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Time &amp; Space Complexity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: Engineering Mathematics -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-zinc-500 border-4 border-brand-950 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 class="text-base sm:text-lg font-bold text-white">
+                Engineering Mathematics &amp; Computational Calculus
+              </h3>
+              <span class="text-xs font-mono text-zinc-400">Theoretical Foundation</span>
+            </div>
+            
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+              Multivariable calculus, matrix algebra, eigenvalues and eigenvectors, differential equations, and series approximations essential for machine learning and scientific computing.
+            </p>
+
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-zinc-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Linear Algebra</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Multivariable Calculus</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Matrix Factorization</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Optimization Methods</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 4: Digital Logic & Architecture -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-zinc-600 border-4 border-brand-950 group-hover:scale-125 transition-transform"></div>
+          
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 class="text-base sm:text-lg font-bold text-white">
+                Digital Logic Design &amp; Computer Architecture
+              </h3>
+              <span class="text-xs font-mono text-zinc-400">Hardware Abstraction</span>
+            </div>
+            
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+              Boolean algebra minimization, Karnaugh maps, combinational logic (multiplexers, adders), and sequential circuits (flip-flops, registers, counters) driving microprocessors.
+            </p>
+
+            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-zinc-300">
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Boolean Reduction</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Flip-Flops &amp; Registers</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">ALU Synthesis</span>
+              <span class="bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Circuit Simulation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. FOOTER & CONTACT SECTION -->
+    <!-- ========================================== -->
+    <section id="contact" class="scroll-mt-28">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+        <!-- Ambient background glow inside card -->
+        <div class="absolute -top-24 -right-24 w-80 h-80 bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-2xl relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-zinc-400 mb-6">
+            <span>// LET'S CONNECT</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+            Let's build something exceptional together.
+          </h2>
+
+          <p class="text-sm sm:text-base text-zinc-400 leading-relaxed mb-8">
+            Whether you want to discuss undergraduate research, collaborate on open-source engineering, or review this portfolio for the <strong class="text-zinc-200">Digital Literacy</strong> course at <strong class="text-zinc-200">JECRC University</strong>, my inbox is always open.
+          </p>
+
+          <!-- Email Copy & Contact Actions -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-10">
+            <!-- Copy Email Button -->
+            <button onclick="copyEmailToClipboard(this)" class="group flex items-center justify-between gap-3 px-5 py-3.5 rounded-2xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 hover:border-white/20 transition-all text-left">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="mail" class="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors"></i>
+                <span class="font-mono text-xs sm:text-sm text-zinc-200" id="contact-email">adityajecrc@gmail.com</span>
+              </div>
+              <span class="text-[11px] font-mono text-zinc-400 group-hover:text-white flex items-center gap-1">
+                <span>Copy</span>
+                <i data-lucide="copy" class="w-3 h-3"></i>
+              </span>
+            </button>
+
+            <!-- Direct Mailto Button -->
+            <a href="mailto:adityajecrc@gmail.com" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold text-black bg-white hover:bg-zinc-200 transition shadow-lg shadow-white/5">
+              <span>Send Message</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Social Links Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/5">
+            <!-- GITHUB -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/5 hover:border-white/15 transition-all text-zinc-400 hover:text-white text-xs">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub</span>
+            </a>
+            <!-- LINKEDIN -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/5 hover:border-white/15 transition-all text-zinc-400 hover:text-white text-xs">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>LinkedIn</span>
+            </a>
+            <!-- X / TWITTER -->
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/5 hover:border-white/15 transition-all text-zinc-400 hover:text-white text-xs">
+              <i data-lucide="twitter" class="w-4 h-4"></i>
+              <span>X / Twitter</span>
+            </a>
+            <!-- JECRC UNI PORTAL -->
+            <a href="https://jecrcuniversity.edu.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/5 hover:border-white/15 transition-all text-zinc-400 hover:text-white text-xs">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>JECRC Portal</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER BOTTOM BAR -->
+  <!-- ========================================== -->
+  <footer class="relative z-10 border-t border-white/5 bg-brand-950/80 backdrop-blur-md py-8">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center font-bold text-white text-[10px]">
+          A
+        </div>
+        <span>&copy; 2026 Aditya. Built for <strong class="text-zinc-400 font-normal">Digital Literacy</strong> at JECRC University.</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-[11px] font-mono">
+        <span class="flex items-center gap-1.5 text-zinc-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span> All systems operational
+        </span>
+        <a href="#hero" class="hover:text-white transition-colors">Back to top &uarr;</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- INTERACTIVE TOAST NOTIFICATION -->
+  <!-- ========================================== -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-brand-900 border border-white/20 text-white shadow-2xl text-xs font-mono">
+    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-message">Email copied to clipboard!</span>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- PROJECT DETAILS MODAL -->
+  <!-- ========================================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-card max-w-lg w-full rounded-2xl p-6 sm:p-8 relative bg-brand-900/95 border border-white/15 shadow-2xl">
+      <button onclick="closeProjectDetails()" class="absolute top-4 right-4 p-2 text-zinc-400 hover:text-white rounded-lg" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">// PROJECT INSIGHT</span>
+      </div>
+      <h3 id="modal-title" class="text-xl font-bold text-white mb-3">Project Title</h3>
+      <p id="modal-desc" class="text-sm text-zinc-300 leading-relaxed mb-6">Project detailed description.</p>
+      
+      <div class="pt-4 border-t border-white/10 flex justify-end gap-3">
+        <button onclick="closeProjectDetails()" class="px-4 py-2 rounded-xl text-xs font-medium text-zinc-400 hover:text-white transition">
+          Close
+        </button>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl text-xs font-medium text-black bg-white hover:bg-zinc-200 transition">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT: INTERACTIONS & INITIALIZATION -->
+  <!-- ========================================== -->
+  <script>
+    // 1. Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+        });
+      });
+    }
+
+    // 3. Toast Notification Helper
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      if (!toast || !toastMsg) return;
+
+      toastMsg.innerText = message;
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3000);
+    }
+
+    // 4. Copy Email to Clipboard
+    function copyEmailToClipboard(buttonElement) {
+      const email = "adityajecrc@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        showToast("Copied: " + email);
+        
+        // Temporary micro-animation on button
+        if (buttonElement) {
+          const originalText = buttonElement.innerHTML;
+          buttonElement.classList.add('border-emerald-500/40');
+          setTimeout(() => {
+            buttonElement.classList.remove('border-emerald-500/40');
+          }, 1500);
+        }
+      }).catch(err => {
+        // Fallback
+        showToast("Email: " + email);
+      });
+    }
+
+    // 5. Download Resume Action
+    function handleDownloadCV() {
+      // You can point this to your actual PDF resume file in the same folder (e.g. 'Aditya_Resume.pdf')
+      showToast("Preparing Aditya's Academic CV (PDF)...");
+      setTimeout(() => {
+        window.open('mailto:adityajecrc@gmail.com?subject=Request%20for%20Academic%20CV%20-%20Aditya', '_blank');
+      }, 1000);
+    }
+
+    // 6. Project Modal Details
+    function showProjectDetails(title, description) {
+      const modal = document.getElementById('project-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDesc = document.getElementById('modal-desc');
+      if (modal && modalTitle && modalDesc) {
+        modalTitle.innerText = title;
+        modalDesc.innerText = description;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeProjectDetails() {
+      const modal = document.getElementById('project-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // Close modal on escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProjectDetails();
+      }
+    });
+
+    // 7. Active Nav Item Spy on Scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 120;
+        const sectionId = current.getAttribute('id');
+        const navAnchor = document.querySelector(`.nav-link[href*="${sectionId}"]`);
+
+        if (navAnchor) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navAnchor.classList.add('text-white', 'bg-white/[0.08]');
+            navAnchor.classList.remove('text-zinc-400');
+          } else {
+            navAnchor.classList.remove('text-white', 'bg-white/[0.08]');
+            navAnchor.classList.add('text-zinc-400');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
